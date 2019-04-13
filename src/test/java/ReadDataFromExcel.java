@@ -6,7 +6,7 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
-public class Test 
+public class ReadDataFromExcel 
 {
 	public static void main(String[] args) throws BiffException, IOException {
 		
