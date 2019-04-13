@@ -12,7 +12,7 @@ public class ReadDataFromExcel
 		
 		//.out.println("heelo");
 		
-		File filePath = new File("/Users/sumitkumar/Documents/ExcelDataRead.xls");
+		File filePath = new File("../ExcelFileHandlingbysumit/ExcelDataRead.xls");
 		
 		Workbook wb=Workbook.getWorkbook(filePath);
 		
