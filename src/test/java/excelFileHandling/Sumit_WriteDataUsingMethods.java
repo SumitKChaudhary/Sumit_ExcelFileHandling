@@ -11,8 +11,8 @@ import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
 /*@author 	:	Sumit Kumar Chaudhary
- * Class	:	Read the data from one sheet and copy to second sheet in one file 
- * Date		:	16 April 2019 
+ * Class	:	Create method for write a file data
+ * Date		:	17 April 2019 
  * */
 public class Sumit_WriteDataUsingMethods 
 
