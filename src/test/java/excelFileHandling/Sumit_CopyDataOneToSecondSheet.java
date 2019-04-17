@@ -30,7 +30,7 @@ public class Sumit_CopyDataOneToSecondSheet
 		
 		File myWrite = new File("../ExcelFileHandlingbysumit/Write1.xls");
 		WritableWorkbook copyWorkSheet = Workbook.createWorkbook(myWrite);
-		WritableSheet copySheet = copyWorkSheet.createSheet("CopiedSheet", 0);
+		WritableSheet copySheet = copyWorkSheet.createSheet("CopiedSheet2", 1);
 
 		String copyData = null;
 		
