@@ -14,7 +14,7 @@ public class ReadDataFromExcel
 		//.out.println("heelo");
 		
 		File filePath = new File("../ExcelFileHandlingbysumit/ExcelDataRead.xls");
-		if (filePath.exists()) {
+		
 		Workbook wb=Workbook.getWorkbook(filePath);
 		
 		Sheet sb=wb.getSheet(0);
@@ -29,11 +29,6 @@ public class ReadDataFromExcel
 				Cell sheetCell= sb.getCell(j,i);
 				System.out.println(sheetCell.getContents());
 			}
-		}
-		}
-		else
-		{
-			System.out.println("File not exist please check");
 		}
 		
 		
