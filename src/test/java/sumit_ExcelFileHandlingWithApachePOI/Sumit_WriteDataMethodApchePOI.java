@@ -14,7 +14,7 @@ public class Sumit_WriteDataMethodApchePOI
 {
 	public void writeExcelData(int row_no, int cell_No) throws IOException
 	{
-File  createFile = new File("../ExcelFileHandlingbysumit/MethodDataStorageFilebyAppcahePOI.xlsx");
+		File  createFile = new File("../ExcelFileHandlingbysumit/MethodDataStorageFilebyAppcahePOI.xlsx");
 		
 		FileOutputStream createFile2 = new FileOutputStream(createFile);
 		

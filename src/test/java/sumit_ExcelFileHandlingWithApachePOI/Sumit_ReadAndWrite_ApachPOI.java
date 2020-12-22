@@ -11,51 +11,69 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
+import jxl.write.biff.RowsExceededException;
+
 public class Sumit_ReadAndWrite_ApachPOI
 {
-	public static void main(String[] args) throws IOException 
-	{
-		File readFile = new File("../ExcelFileHandlingbysumit/DataFile_Apache.xlsx");
-		FileInputStream inputFile = new FileInputStream(readFile);
-		XSSFWorkbook getData = new XSSFWorkbook(inputFile);
-		XSSFSheet getSheet = getData.getSheetAt(0);
-		int row_No = getSheet.getPhysicalNumberOfRows();
-		
-		
-		File copiedFile = new File("../ExcelFileHandlingbysumit/CopiedStorageFile_Apache.xlsx");
-		FileOutputStream outFile = new FileOutputStream(copiedFile);
-		
-		XSSFWorkbook copiedDataFile = new XSSFWorkbook();
-		
-		XSSFSheet copiedSheet = copiedDataFile.createSheet();
-		
-		String copiedData= null; 
-		for (int i=0; i<row_No; i++)
-		{
-			XSSFRow getRow = getSheet.getRow(i);
-			
-			XSSFRow createRow = copiedSheet.createRow(i);
-			
-			int sheetCell= getRow.getPhysicalNumberOfCells();
-			
-			for (int j=0; j<sheetCell; j++)
-			{
-				XSSFCell getCell = getRow.getCell(j);
-				XSSFCell createCell = createRow.createCell(j);
+	public static String createNewExcelFile(String expectedFileName) {
+		String getCreatedFilePath=null;
+		File filePath=new File(System.getProperty("user.dir")+File.separator+"ExcelFils"+File.separator+expectedFileName+".xlsx");
+		FileOutputStream fileOutput;
+		if(!filePath.exists()) {
+			try {
 				
-				copiedData = getCell.getStringCellValue();
+				fileOutput= new FileOutputStream(filePath);
+				fileOutput.flush();
+				fileOutput.close();	
+				getCreatedFilePath=filePath.getAbsolutePath();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		
+		}else {
+				try {
 				
-				createCell.setCellValue(copiedData);
-				
-				//System.out.println(getCell.getStringCellValue());
-			}
-					
+				//fileOutput= new FileOutputStream(filePath);
+				//fileOutput.flush();
+				//fileOutput.close();	
+				getCreatedFilePath=filePath.getAbsolutePath();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 		}
-		copiedDataFile.write(outFile);
-		outFile.flush();
-		outFile.close();
-		System.out.println( "Read Data from : "+readFile.getName()+ "\nData Successfully copyed :   "+ copiedFile.getName());
+		return getCreatedFilePath;
 		
 	}
-
+	/*
+	public static void main(String[] args) throws RowsExceededException, WriteException, IOException {
+			//String newExcelFile=;
+			File filePath = new File(createNewExcelFile("newBlankFile2"));
+			FileOutputStream createNewFile = new FileOutputStream(filePath);
+			XSSFWorkbook writeFile = new XSSFWorkbook(); 
+			
+			XSSFSheet createSheet=writeFile.createSheet();
+			
+			int a=0;
+			for(int i=0;i<5;i++)
+			{
+				XSSFRow createRow = createSheet.createRow(i);
+				for (int j=0; j<5;j++)
+				{
+					XSSFCell createCell = createRow.createCell(j);
+					createCell.setCellValue("Sumit"+a);
+					a=+i;
+				}
+			}
+			writeFile.write(createNewFile);
+			createNewFile.flush();
+			createNewFile.close();
+			//writeFile.
+			System.out.println("success");
+		
+	}*/
 }

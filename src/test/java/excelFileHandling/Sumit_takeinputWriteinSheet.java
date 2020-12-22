@@ -14,7 +14,7 @@ public class Sumit_takeinputWriteinSheet
 {
 	public static void main(String[] args) throws IOException, WriteException 
 	{
-		File storeFile = new File("../ExcelFileHandlingbysumit/StoreData.xls");
+		File storeFile = new File(System.getProperty("user.dir")+File.separator+"StoreData.xls");
 		
 		WritableWorkbook createWorkbook = Workbook.createWorkbook(storeFile);
 		
