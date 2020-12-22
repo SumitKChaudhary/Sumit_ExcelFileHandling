@@ -6,7 +6,7 @@
  *  PROJECT NAME 	:	 PayworldRPOS
  * 	Time			:    2:49:47 am
  */
-package nikhilExcelLibrary;
+package myGenericExcelLibrary;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -212,9 +212,25 @@ public class ExcelFilehandler {
 			cell = row.getCell(colNum);
 			if (cell == null)
 				cell = row.createCell(colNum);
-
-			cell.setCellValue(data);
-
+			
+			XSSFCellStyle style = null;
+			XSSFFont fontStyle=workbook.createFont();
+			fontStyle.setBold(true);
+			fontStyle.setItalic(true);
+			style = workbook.createCellStyle();
+			
+			if(data.equals("PASS") || data.equals("pass") || data.equals("PASSED") || data.equals("Passed")) {
+				style.setFillForegroundColor(HSSFColor.GREEN.index);
+				style.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+				style.setFont(fontStyle);
+			}else if(data.equals("FAILED") || data.equals("Failed") || data.equals("fail") || data.equals("FAIL")) {
+				style.setFillForegroundColor(HSSFColor.RED.index);
+				style.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+				style.setFont(fontStyle);
+			}
+			
+				cell.setCellValue(data);
+				cell.setCellStyle(style);
 			fileOut = new FileOutputStream(path);
 
 			workbook.write(fileOut);
