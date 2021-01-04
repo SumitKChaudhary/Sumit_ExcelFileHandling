@@ -1,10 +1,10 @@
 package com.SumitRandD;
 
 public class ReturnData {
-	private String name;
-	private String gender;
-	private String add;
-	private String extra;
+	private static String name;
+	private static String gender;
+	private static String add;
+	private static String extra;
 	public ReturnData(String name, String gender, String add, String extra) {
 		this.add=add;
 		this.gender=gender;
@@ -12,18 +12,18 @@ public class ReturnData {
 		this.extra=extra;
 	}
 		public static ReturnData storeDetail() {
-			String name="Sumit";
-			String gender="Male";
-			String add="Guru";
-			String extra="";
+			name="Sumit";
+			gender="Male";
+			add="Guru";
+			extra="";
 			return new ReturnData(name, add, gender,extra);
 		}
 		
 		public static ReturnData storeSecondDetail() {
-			String name="Amit";
-			String gender="Male";
-			String add = "Noida";
-			String extra="Sof";
+			name="Amit";
+			gender="Male";
+			add = "Noida";
+			extra="Sof";
 			return new ReturnData(name, gender, add,extra);
 		}
 		
