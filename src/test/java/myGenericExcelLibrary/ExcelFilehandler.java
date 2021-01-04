@@ -7,6 +7,7 @@
  * 	Time			:    2:49:47 am
  */
 package myGenericExcelLibrary;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -41,7 +42,7 @@ public class ExcelFilehandler {
 
 		this.path = path;
 		try {
-			fis = new FileInputStream(path);
+			fis = new FileInputStream(System.getProperty("user.dir")+File.separator+path);
 			workbook = new XSSFWorkbook(fis);
 			sheet = workbook.getSheetAt(0);
 			fis.close();
