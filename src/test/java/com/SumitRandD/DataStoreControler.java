@@ -3,59 +3,46 @@ package com.SumitRandD;
 import javax.xml.crypto.Data;
 
 public class DataStoreControler {
-	public String name;
-	public String gender;
-	public String add;
-	public String getName() {
+	public static  String name;
+	public static String gender;
+	public static String add;
+	public static String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public static void setName(String name) {
+		DataStoreControler.name = name;
 	}
-	public String getGender() {
+	public static String getGender() {
 		return gender;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public static void setGender(String gender) {
+		DataStoreControler.gender = gender;
 	}
-	public String getAdd() {
+	public static String getAdd() {
 		return add;
 	}
-	public void setAdd(String add) {
-		this.add = add;
+	public static void setAdd(String add) {
+		DataStoreControler.add = add;
 	}
 	
-	public static DataStoreControler storeOne(int no) {
+	public static DataStoreControler one(int one) {
 		DataStoreControler obj=new DataStoreControler();
-		if(no==1) {
-			
-			obj.name="Sumit";
-			obj.gender="Male";
-			obj.add="Gurugram";
+		if(one==1) {
+
+			DataStoreControler.name="Sumit";
+			DataStoreControler.gender="Male";
+			DataStoreControler.add="dsfsd";
+		}else if (one==2) {
+			DataStoreControler.name="Shashi";
+			DataStoreControler.gender="Feale";
+			DataStoreControler.add="dsfsd";
 		}
 		return obj;
-		
-	}
-	public static DataStoreControler storeTwo (int no) {
-		DataStoreControler obj=new DataStoreControler();
-		if(no==1) {
-			
-			obj.name="Amit";
-			obj.gender="Female";
-			obj.add="Noida";
-		}
-		return obj;
-		
 	}
 	public static void main(String[] args) {
-		System.out.println("One");
-		System.out.println(DataStoreControler.storeOne(1).getName());
-		System.out.println(DataStoreControler.storeOne(1).getGender());
-		System.out.println(DataStoreControler.storeOne(1).getAdd());
-		
-		System.out.println("Two");
-		System.out.println(DataStoreControler.storeTwo(1).getName());
-		System.out.println(DataStoreControler.storeTwo(1).getGender());
-		System.out.println(DataStoreControler.storeTwo(1).getAdd());
+		DataStoreControler.one(1);
+		System.out.println(DataStoreControler.getName());
+		DataStoreControler.one(2);
+		System.out.println(DataStoreControler.getName());
 	}
 }
