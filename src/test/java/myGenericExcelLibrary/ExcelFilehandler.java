@@ -19,6 +19,7 @@ import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFCreationHelper;
@@ -47,7 +48,7 @@ public class ExcelFilehandler {
 			sheet = workbook.getSheetAt(0);
 			fis.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
@@ -201,6 +202,7 @@ public class ExcelFilehandler {
 				//System.out.println(row.getCell(i).getStringCellValue().trim());
 				if (row.getCell(i).getStringCellValue().trim().equals(colName))
 					colNum = i;
+				
 			}
 			if (colNum == -1)
 				return false;
@@ -209,10 +211,11 @@ public class ExcelFilehandler {
 			row = sheet.getRow(rowNum - 1);
 			if (row == null)
 				row = sheet.createRow(rowNum - 1);
-
+			
 			cell = row.getCell(colNum);
 			if (cell == null)
 				cell = row.createCell(colNum);
+			
 			
 			XSSFCellStyle style = null;
 			XSSFFont fontStyle=workbook.createFont();

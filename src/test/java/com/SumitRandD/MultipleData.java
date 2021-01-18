@@ -1,12 +1,11 @@
 package com.SumitRandD;
 
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable.BinaryOp.Mul;
 
 public class MultipleData {
 	
-	public String name;
-	public String mobileNo;
-	public String add;
+	private String name;
+	private String mobileNo;
+	private String add;
 	public String getName() {
 		return name;
 	}
@@ -40,18 +39,4 @@ public class MultipleData {
 		return mulOne;
 	}
 	
-	public static void main(String[] args) {
-		MultipleData one=MultipleData.one(1);
-		System.out.println("One Return");
-		System.out.println(one.getName());
-		System.out.println(one.getMobileNo());
-		System.out.println(one.getAdd());
-		
-		MultipleData two=MultipleData.one(2);
-		System.out.println("Two Return");
-		System.out.println(two.getName());
-		System.out.println(two.getMobileNo());
-		System.out.println(two.getAdd());
-		
-	}
 }

@@ -18,7 +18,9 @@ public class ExcelLibraryUse
 			obj.addSheet(sheetName);
 			obj.addColumn(sheetName, "Name");
 		}
-		obj.setCellData(sheetName, "Name", 2, "Sumit");
+		obj.setCellData(sheetName, "Name", 2, "Ram");
+		obj.setCellData(sheetName, "Name", 2, "Shaym");
+		
 		System.out.println("Success");
 		
 	}
